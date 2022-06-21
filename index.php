@@ -11,33 +11,41 @@
         <script src="js/functions.js"></script>
         <!-- enlace googlefonts -->
         <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Chakra+Petch:wght@300&family=Permanent+Marker&family=Press+Start+2P&display=swap" rel="stylesheet">
+        <!--enlace para iconos-->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <title>MeetApp</title>
     </head>
 
     <body>
+        <div class="indexPage">
         <div class="header">
             <section class="dropdown">
-                     <button onclick="navFunction()" class="dropbtn">Dropdown</button>
+                     <button onclick="navFunction()" class="dropbtn">Menú</button>
                      <div id="myDropdown" class="dropdown-content">
-                         <a href="#">Link 1</a>
-                         <a href="#">Link 2</a>
-                         <a href="#">Link 3</a>
+                         <a href="#">Eventos</a>
+                         <div class="line"></div>
+                         <a href="#">Favoritos</a>
+                         <div class="line"></div>
+                         <a href="#">Categorías</a>
                      </div>
             </section>
+
             <section class="Tindex">     <!-- título de la cabecera-->
             <h1>MeetApp</h1>
             </section>
+
             <section class="logForm">
-                <h3>X</h3>
+                <h1>X</h1>
             </section>
         </div>
 
-        <div class="line"></div>         <!-- línea de separación de la cabecera -->
+            <div class="line"></div>         <!-- línea de separación de la cabecera -->
 
-        <div class="Container">
-            <h3>------------------------------------</h3>
-            <!-- Insertar cuerpo de la pag con php -->
+            <div class="Container">
+                <!-- Insertar cuerpo de la pag con php -->
+            </div>
+
         </div>
-    <!--Todo botón para añadir mensajes nuevos (pos absolut) -->
+        <div class="addBtn"><h3>+</h3></div> <!-- btn añadir mensaje-->
     </body>
 </html>
