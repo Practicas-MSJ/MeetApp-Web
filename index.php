@@ -36,7 +36,7 @@
             <section class="dropdown">
                      <button onclick="navFunction()" class="dropbtn">Menú</button>
                      <div id="myDropdown" class="dropdown-content">
-                         <a href="#">Eventos</a>
+                         <a href="events.php">Eventos</a>
                          <div class="line"></div>
                          <a href="#">Favoritos</a>
                          <div class="line"></div>

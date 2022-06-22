@@ -15,12 +15,26 @@
 
         <title>MeetApp</title>
     </head>
+
+    <?php
+    require_once("conexion/ddbb.php");
+    $conn = new mysqli(HOST, USER, PASS, DBNAME);
+
+    // Check connection
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+    }
+
+    $sql = "SELECT ID, EVENT_DATE, DESCRIPTION, LOCATION, NAME FROM EVENTS";
+    $result = $conn->query($sql);
+    ?>
+
     <body>
         <div class="header">
             <section class="dropdown">
                 <button onclick="navFunction()" class="dropbtn">Menú</button>
                 <div id="myDropdown" class="dropdown-content">
-                    <a href="#">Eventos</a>
+                    <a href="index.php">Mensajes</a>
                     <div class="line"></div>
                     <a href="#">Favoritos</a>
                     <div class="line"></div>
@@ -40,7 +54,25 @@
         <div class="line"></div>         <!-- línea de separación de la cabecera -->
 
         <div class="ContainerEvent">
+            <br><br><br><br>
+            <?php if ($result->num_rows > 0) {
+                // output data of each row
+                while($row = $result->fetch_array()) { ?>
 
+                    <div class="message"> <!--cuerpo de mensaje-->
+                        <h3><?php echo $row["NAME"]?></h3>
+                        <section class="line"></section>
+                        <?php echo $row["DESCRIPTION"]?>
+                        <section class="editMessage">
+                            <button class="editBtn">/</button><button class="editBtn">X</button>
+                        </section>
+                    </div>
+                <?php }
+            } else {
+                echo "<br>Todavía no hay ningún evento. Créalo primero.";
+            }
+            $conn->close();
+            ?>
         </div>
     </body>
 </html>
