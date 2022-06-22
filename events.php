@@ -57,11 +57,11 @@
             <br><br><br><br>
             <div class="sidenav">
                 <br><br><br><br>
-                <a href="show_event.php">
+
                 <?php if ($result->num_rows > 0) {
                     // output data of each row
                     while($row = $result->fetch_array()) { ?>
-
+                <a href="show_event.php">
                         <div> <!--cuerpo de mensaje-->
                             <br>
                             <h3><?php echo $row["NAME"]?></h3>
