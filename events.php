@@ -55,24 +55,34 @@
 
         <div class="ContainerEvent">
             <br><br><br><br>
-            <?php if ($result->num_rows > 0) {
-                // output data of each row
-                while($row = $result->fetch_array()) { ?>
+            <div class="sidenav">
+                <br><br><br><br>
+                <a href="#">Event</a>
+                <a href="#">Event 2</a>
+                <a href="#">Event 3</a>
+            </div>
 
-                    <div class="message"> <!--cuerpo de mensaje-->
-                        <h3><?php echo $row["NAME"]?></h3>
-                        <section class="line"></section>
-                        <?php echo $row["DESCRIPTION"]?>
-                        <section class="editMessage">
-                            <button class="editBtn">/</button><button class="editBtn">X</button>
-                        </section>
-                    </div>
-                <?php }
-            } else {
-                echo "<br>Todavía no hay ningún evento. Créalo primero.";
-            }
-            $conn->close();
-            ?>
+            <div class="contentInfo">
+                <?php if ($result->num_rows > 0) {
+                    // output data of each row
+                    while($row = $result->fetch_array()) { ?>
+
+                        <div class="message"> <!--cuerpo de mensaje-->
+                            <h3><?php echo $row["NAME"]?></h3>
+                            <section class="line"></section>
+                            <?php echo $row["DESCRIPTION"]?>
+                            <section class="editMessage">
+                                <button class="editBtn">/</button><button class="editBtn">X</button>
+                            </section>
+                        </div>
+                    <?php }
+                } else {
+                    echo "<br>Todavía no hay ningún evento. Créalo primero.";
+                }
+                $conn->close();
+                ?>
+            </div>
+
         </div>
     </body>
 </html>
