@@ -69,10 +69,11 @@
                     </div>
                 <?php }
             } else {
-                echo "<br>Todavía no hay ningún evento. Créalo primero.";
+                echo "<div class='message', align='center'>Todavía no hay ningún evento. Créalo primero.</div>";
             }
             $conn->close();
             ?>
         </div>
+        <div class="addBtn"><h3>+</h3></div> <!-- btn añadir mensaje-->
     </body>
 </html>

@@ -73,7 +73,7 @@
                 </div>
                 <?php }
                 } else {
-                    echo "<br>Todavía no hay ninguna categoría. Créala primero.";
+                    echo "<div class='message', align='center' '>Todavía no hay ningún mensaje. Sé el primero en escribir uno.</div>";
                 }
                 $conn->close();
                 ?>
