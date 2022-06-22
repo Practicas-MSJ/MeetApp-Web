@@ -57,12 +57,31 @@
             <br><br><br><br>
             <div class="sidenav">
                 <br><br><br><br>
+                <a href="show_event.php">
+                <?php if ($result->num_rows > 0) {
+                    // output data of each row
+                    while($row = $result->fetch_array()) { ?>
+
+                        <div> <!--cuerpo de mensaje-->
+                            <br>
+                            <h3><?php echo $row["NAME"]?></h3>
+                            <br>
+                            <section class="line"></section>
+                        </div>
+
+                    <?php }
+                } else {
+                    echo "<br>Todavía no hay ningún evento. Créalo primero.";
+                }
+                ?>
+                </a>
                 <a href="#">Event</a>
                 <a href="#">Event 2</a>
                 <a href="#">Event 3</a>
             </div>
 
             <div class="contentInfo">
+                <iframe src="show_event_frame.php" class="iframe"></iframe>
                 <?php if ($result->num_rows > 0) {
                     // output data of each row
                     while($row = $result->fetch_array()) { ?>

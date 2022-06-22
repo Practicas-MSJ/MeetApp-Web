@@ -180,6 +180,17 @@
     color: black;
 }
 .contentInfo {
-    margin: 20px;
+    margin: 15px  auto;
+    padding-left: 10%;
+    padding-right: 10%;
     font-family: 'Roboto', sans-serif;
+    z-index: 1;
+}
+.iframe {
+    width:900px;
+    min-height:700px;
+    height: auto;
+    allow:fullscreen;
+    border: none;
+    margin: -70px 120px;
 }
