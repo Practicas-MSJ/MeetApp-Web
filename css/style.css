@@ -33,7 +33,6 @@
     display: table;
     content: "";
     clear: both;
-
 }
 /****************************************** Menú desplegable **********************************************/
 /*Boton del menú desplegable*/
@@ -100,6 +99,16 @@
     background-repeat: no-repeat;
 
     opacity: 0.6;
+    height: 100%;
+    width: 100%;
+    z-index: -100;
+    position: absolute;
+}
+.ContainerEvent {
+    background-image: url("/resources/img/fondo-evento.jpg");
+    background-repeat: no-repeat;
+
+    opacity: 0.7;
     height: 100%;
     width: 100%;
     z-index: -100;
