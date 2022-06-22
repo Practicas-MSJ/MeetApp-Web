@@ -16,6 +16,20 @@
         <title>MeetApp</title>
     </head>
 
+    <?php
+        require_once("conexion/ddbb.php");
+        $conn = new mysqli(HOST, USER, PASS, DBNAME);
+
+        // Check connection
+        if ($conn->connect_error) {
+            die("Connection failed: " . $conn->connect_error);
+            }
+
+        $sql = "SELECT MESSAGES.ID, MESSAGE_DATE, FAVOURITE, IMAGE, TEXT, CATEGORY_ID, USER_ID, USERS.NAME FROM MESSAGES
+                INNER JOIN USERS ON MESSAGES.USER_ID = USERS.ID";
+        $result = $conn->query($sql);
+    ?>
+
     <body>
         <div class="indexPage">
         <div class="header">
@@ -44,30 +58,25 @@
             <div class="Container">
                 <br><br><br><br>
                 <!-- Insertar cuerpo de la pag con php -->
-                <div class="message"> <!--ejemplo de mensaje-->
-                    <h3>Texto</h3>
+
+                <?php if ($result->num_rows > 0) {
+                // output data of each row
+                while($row = $result->fetch_array()) { ?>
+
+                <div class="message"> <!--cuerpo de mensaje-->
+                    <h3><?php echo $row["NAME"]?></h3>
                     <section class="line"></section>
-                    <br>
-                    Texto Texto Texto Texto Texto Texto Texto Texto <br> Texto Texto Texto Texto Texto Texto Texto Texto
-                    lore <ipsum></ipsum>
-                </div>
-                <div class="message"> <!--ejemplo de mensaje-->
-                    <h3>Texto</h3>
-                    <section class="line"></section>
-                    <br>
-                    Texto Texto Texto Texto Texto Texto Texto Texto <br> Texto Texto Texto Texto Texto Texto Texto Texto <br>
-                    Texto Texto Texto Texto Texto Texto Texto Texto <br> Texto Texto Texto Texto Texto Texto Texto Texto
+                    <?php echo $row["TEXT"]?>
                     <section class="editMessage">
                         <button class="editBtn">/</button><button class="editBtn">X</button>
                     </section>
                 </div>
-                <div class="message"> <!--ejemplo de mensaje-->
-                    <h3>Texto</h3>
-                    <section class="line"></section>
-                    <br>
-                    Texto Texto Texto Texto Texto Texto Texto Texto <br> Texto Texto Texto Texto Texto Texto Texto Texto
-                    lore <ipsum></ipsum>
-                </div>
+                <?php }
+                } else {
+                    echo "<br>Todavía no hay ninguna categoría. Créala primero.";
+                }
+                $conn->close();
+                ?>
             </div>
 
         </div>
