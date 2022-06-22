@@ -57,13 +57,15 @@
             <br><br><br><br>
             <div class="sidenav">
                 <br><br><br><br>
+                <a href="#">New event</a>
+                <br>
+                <section class="line"></section>
 
                 <?php if ($result->num_rows > 0) {
                     // output data of each row
                     while($row = $result->fetch_array()) { ?>
                 <a href="show_event.php">
                         <div> <!--cuerpo de mensaje-->
-                            <br>
                             <h3><?php echo $row["NAME"]?></h3>
                             <br>
                             <section class="line"></section>
@@ -75,9 +77,6 @@
                 }
                 ?>
                 </a>
-                <a href="#">Event</a>
-                <a href="#">Event 2</a>
-                <a href="#">Event 3</a>
             </div>
 
             <div class="contentInfo">

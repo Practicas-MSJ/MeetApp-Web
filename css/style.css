@@ -167,6 +167,7 @@
     left: 0;
     background-color: #b00edc;
     overflow-x: hidden;
+
     font-family: 'Roboto', sans-serif;
 }
 .sidenav a {
@@ -180,7 +181,9 @@
     color: black;
 }
 .contentInfo {
-    margin: 15px  auto;
+    min-height: 100%;
+    height: auto;
+    margin: 0  auto;
     padding-left: 10%;
     padding-right: 10%;
     font-family: 'Roboto', sans-serif;
@@ -188,9 +191,9 @@
 }
 .iframe {
     width:900px;
-    min-height:700px;
+    min-height:600px;
     height: auto;
     allow:fullscreen;
     border: none;
-    margin: -70px 120px;
+    margin: 0 auto;
 }
