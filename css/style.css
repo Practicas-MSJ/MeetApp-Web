@@ -105,6 +105,32 @@
     z-index: -100;
     position: absolute;
 }
+/****************************************** cuerpo mensaje **************************************************/
+.message {
+    background-color: rgba(255, 255, 255, 0.65);
+    z-index: 1;
+    width: 70%;
+    height: fit-content;
+    margin: 15px auto ;
+    border-radius: 1px;
+    font-family: 'Roboto', sans-serif;
+    color: #111111;
+    padding: 10px;
+}
+
+.message h3 {
+    color: #111111;
+}
+
+.editMessage {
+    text-align: right;
+}
+
+.editBtn {
+    color: #111111;
+    border: none;
+    cursor: pointer;
+}
 /*********************************************** botón nuevo mensaje flotante ******************************/
 .addBtn {
     background-color: #ee00ff;

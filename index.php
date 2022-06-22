@@ -42,7 +42,32 @@
             <div class="line"></div>         <!-- línea de separación de la cabecera -->
 
             <div class="Container">
+                <br><br><br><br>
                 <!-- Insertar cuerpo de la pag con php -->
+                <div class="message"> <!--ejemplo de mensaje-->
+                    <h3>Texto</h3>
+                    <section class="line"></section>
+                    <br>
+                    Texto Texto Texto Texto Texto Texto Texto Texto <br> Texto Texto Texto Texto Texto Texto Texto Texto
+                    lore <ipsum></ipsum>
+                </div>
+                <div class="message"> <!--ejemplo de mensaje-->
+                    <h3>Texto</h3>
+                    <section class="line"></section>
+                    <br>
+                    Texto Texto Texto Texto Texto Texto Texto Texto <br> Texto Texto Texto Texto Texto Texto Texto Texto <br>
+                    Texto Texto Texto Texto Texto Texto Texto Texto <br> Texto Texto Texto Texto Texto Texto Texto Texto
+                    <section class="editMessage">
+                        <button class="editBtn">/</button><button class="editBtn">X</button>
+                    </section>
+                </div>
+                <div class="message"> <!--ejemplo de mensaje-->
+                    <h3>Texto</h3>
+                    <section class="line"></section>
+                    <br>
+                    Texto Texto Texto Texto Texto Texto Texto Texto <br> Texto Texto Texto Texto Texto Texto Texto Texto
+                    lore <ipsum></ipsum>
+                </div>
             </div>
 
         </div>
