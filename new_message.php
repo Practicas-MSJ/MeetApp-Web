@@ -27,7 +27,7 @@ function renderForm($text, $error) {
                     <?php
                     // Si hay errores, los muestra en pantalla
                     if ($error != '') {
-                        echo '<div style="padding:4px;color:#ff0000;">' . $error . '</div><br>';
+                        echo '<div style="padding:4px; color:#ff0000;">' . $error . '</div><br>';
                     }
                     ?>
                     <button type="submit" name="submit" value="Submit" class="buttonform">Meet up!</button>
