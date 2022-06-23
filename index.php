@@ -65,7 +65,8 @@
                     <section class="line"></section>
                     <?php echo $row["TEXT"]?>
                     <section class="editMessage">
-                        <button class="editBtn">/</button><button class="editBtn">X</button>
+                        <button class="editBtn">/</button>
+                        <a href="crud/delete_msj.php?id=<?php echo $row[0]?>"><button class="editBtn">X</button></a>
                     </section>
                 </div>
                 <?php }
