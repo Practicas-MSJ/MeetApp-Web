@@ -4,40 +4,40 @@
 function renderForm($text, $error) {
 ?>
 <html>
-<head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/form.css">
-    <link href='https://fonts.googleapis.com/css?family=Nunito:400,300' rel='stylesheet' type='text/css'>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <!-- enlace googlefonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Chakra+Petch:wght@300&family=Permanent+Marker&family=Press+Start+2P&display=swap" rel="stylesheet">
-    <script src="js/functions.js"></script>
-    <title>MeetApp - New message</title>
-</head>
-<body class="form">
-<div class="row">
-    <div class="col-md-12">
-        <form action="" method="post">
-            <div class="text" align="center">
-                <h1>New message</h1>
-                <fieldset>
-                    <label for="message">Say something new to your near people:</label>
-                    <textarea id="message" name="message"></textarea>
-                </fieldset>
-                <?php
-                // Si hay errores, los muestra en pantalla
-                if ($error != '') {
-                    echo '<div style="padding:4px; border:1px solid red;color:#ff0000;">' . $error . '</div>';
-                }
-                ?>
-                <button type="submit" class="buttonform">Meet up!</button>
-                <a href="index.php" <button class="cancelbutton">Cancel</button></a>
-            </div>
-        </form>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="css/form.css">
+        <link href='https://fonts.googleapis.com/css?family=Nunito:400,300' rel='stylesheet' type='text/css'>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <!-- enlace googlefonts -->
+        <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Chakra+Petch:wght@300&family=Permanent+Marker&family=Press+Start+2P&display=swap" rel="stylesheet">
+        <script src="js/functions.js"></script>
+        <title>MeetApp - New message</title>
+    </head>
+    <body class="form">
+    <div class="row">
+        <div class="col-md-12">
+            <form action="" method="post">
+                <div class="text" align="center">
+                    <h1>New message</h1>
+                    <fieldset>
+                        <label for="message">Say something new to your near people:</label>
+                        <textarea type="text" id="message" name="message" value="<?php echo $text; ?>"></textarea>
+                    </fieldset>
+                    <?php
+                    // Si hay errores, los muestra en pantalla
+                    if ($error != '') {
+                        echo '<div style="padding:4px;color:#ff0000;">' . $error . '</div><br>';
+                    }
+                    ?>
+                    <button type="submit" name="submit" value="Submit" class="buttonform">Meet up!</button>
+                    <a href="index.php" <button class="cancelbutton">Cancel</button></a>
+                </div>
+            </form>
+        </div>
     </div>
-</div>
 
-</body>
+    </body>
 </html>
 <?php
 }
@@ -55,8 +55,8 @@ if (isset($_POST['submit'])) {
     if ($text == '') {
         // Genera el mensaje de error
         $error = 'Someone is hoping to read about you, write something :)';
-        // Si ninguún campo esta en blanco, muestra el formulario otra vez
-        renderForm($text);
+        // Si ningún campo esta en blanco, muestra el formulario otra vez
+        renderForm($text, $error);
     } else {
         // guardamos los datos en la base de datos
         $sql = "INSERT MESSAGES SET TEXT = '$text', MESSAGE_DATE = '$date', FAVOURITE = '$favourite', USER_ID = 1" or die(mysqli_error());
