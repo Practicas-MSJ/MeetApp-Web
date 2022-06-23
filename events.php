@@ -1,5 +1,3 @@
-<?php
-?>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/html">
     <head>
@@ -32,18 +30,18 @@
     <body>
         <div class="header">
             <section class="dropdown">
-                <button onclick="navFunction()" class="dropbtn">Menú</button>
+                <button onclick="navFunction()" class="dropbtn">Menu</button>
                 <div id="myDropdown" class="dropdown-content">
-                    <a href="index.php">Mensajes</a>
+                    <a href="index.php">Messages</a>
                     <div class="line"></div>
-                    <a href="#">Favoritos</a>
+                    <a href="#">Favourites</a>
                     <div class="line"></div>
-                    <a href="#">Categorías</a>
+                    <a href="#">Categories</a>
                 </div>
             </section>
 
             <section class="Tindex">     <!-- título de la cabecera-->
-                <h1>Eventos</h1>
+                <h1>Events</h1>
             </section>
 
             <section class="logForm">
@@ -69,7 +67,7 @@
                     </div>
                 <?php }
             } else {
-                echo "<div class='message', align='center'>Todavía no hay ningún evento. Créalo primero.</div>";
+                echo "<div class='message', align='center'>There is no events. Create one!</div>";
             }
             $conn->close();
             ?>

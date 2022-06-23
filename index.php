@@ -1,6 +1,3 @@
-<?php
-// En construcción
-?>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/html">
     <head>
@@ -34,13 +31,13 @@
         <div class="indexPage">
         <div class="header">
             <section class="dropdown">
-                     <button onclick="navFunction()" class="dropbtn">Menú</button>
+                     <button onclick="navFunction()" class="dropbtn">Menu</button>
                      <div id="myDropdown" class="dropdown-content">
-                         <a href="events.php">Eventos</a>
+                         <a href="events.php">Events</a>
                          <div class="line"></div>
-                         <a href="#">Favoritos</a>
+                         <a href="#">Favourites</a>
                          <div class="line"></div>
-                         <a href="#">Categorías</a>
+                         <a href="#">Categories</a>
                      </div>
             </section>
 
@@ -73,7 +70,7 @@
                 </div>
                 <?php }
                 } else {
-                    echo "<div class='message', align='center' '>Todavía no hay ningún mensaje. Sé el primero en escribir uno.</div>";
+                    echo "<div class='message', align='center' '>There is no messages yet. Be the first one to write a meesage.</div>";
                 }
                 $conn->close();
                 ?>
