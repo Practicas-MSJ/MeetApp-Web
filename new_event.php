@@ -49,7 +49,7 @@ function renderForm($title, $description, $location, $date, $error) {
                         }
                         ?>
                         <button type="submit" name="submit" value="Submit" class="buttonform">Meet up!</button>
-                        <a href="index.php" <button class="cancelbutton">Cancel</button></a>
+                        <a href="events.php" <button class="cancelbutton">Cancel</button></a>
                     </div>
                 </form>
             </div>
