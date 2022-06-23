@@ -63,7 +63,8 @@
                         <section class="line"></section><br>
                         <?php echo $row["DESCRIPTION"]?>
                         <section class="editMessage">
-                            <button class="editBtn">/</button><button class="editBtn">X</button>
+                            <button class="editBtn">/</button>
+                            <a href="crud/delete_event.php?id=<?php echo $row[0]?>"><button class="editBtn">X</button></a>
                         </section>
                         <a href="event_details.php?id=<?php echo $row[0]?>" <h5 class="details">Details</h5></a>
                     </div>
