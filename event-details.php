@@ -34,6 +34,8 @@ $result = $conn->query($sql);
     <section class="dropdown">
         <button onclick="navFunction()" class="dropbtn">Menu</button>
         <div id="myDropdown" class="dropdown-content">
+            <a href="events.php">Events</a>
+            <div class="line"></div>
             <a href="index.php">Messages</a>
             <div class="line"></div>
             <a href="#">Favourites</a>
