@@ -77,6 +77,6 @@
             </div>
 
         </div>
-        <div class="addBtn"><h3>+</h3></div> <!-- btn añadir mensaje-->
+        <a href="new_message.php" <div class="addBtn"><h3>+</h3></div></a> <!-- btn añadir mensaje-->
     </body>
 </html>
