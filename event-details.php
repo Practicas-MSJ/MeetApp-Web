@@ -11,7 +11,7 @@
     <!--enlace para iconos-->
 
 
-    <title>MeetApp</title>
+    <title>MeetApp - Evento</title>
 </head>
 
 <?php
