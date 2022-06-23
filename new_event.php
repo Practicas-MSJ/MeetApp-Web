@@ -1,7 +1,7 @@
 <?php
 /* Permite a los usuarios crear una nueva entrada en la base de datos */
 // Crea el nuevo formulario de nuevo registro
-function renderForm($text, $error) {
+function renderForm($title, $description, $location, $date, $error) {
     ?>
     <html>
     <head>
@@ -22,10 +22,25 @@ function renderForm($text, $error) {
                     <div class="text" align="center">
                         <h1>New event</h1>
                         <fieldset>
-                            <legend><span class="number">1</span> Your Basic Info</legend>
+                            <legend><span class="number">1</span> What are you planning?</legend>
 
-                            <label for="name">Name:</label>
-                            <input type="text" id="name" name="user_name">
+                            <label for="title">Name:</label>
+                            <input type="text" id="title" name="title" value="<?php echo $title; ?>">
+
+                            <label for="description">Say something new to your near people:</label>
+                            <textarea type="text" id="description" name="description" value="<?php echo $description; ?>"></textarea>
+                        </fieldset>
+                        <fieldset>
+                            <legend><span class="number">2</span>Where you will go?</legend>
+
+                            <label for="location">Location:</label>
+                            <input type="text" id="location" name="location" value="<?php echo $location; ?>">
+                        </fieldset>
+                        <fieldset>
+                            <legend><span class="number">3</span>When we go? :D</legend>
+
+                            <label for="date">Date (YYYY-MM-DD):</label>
+                            <input type="text" id="date" name="date" value="<?php echo $date; ?>">
                         </fieldset>
                         <?php
                         // Si hay errores, los muestra en pantalla
@@ -54,23 +69,25 @@ $conn = new mysqli(HOST, USER, PASS, DBNAME);
 // Si se ha enviado, comienza el proceso el formulario y guarda los datos en la DB
 if (isset($_POST['submit'])) {
     // Obtenemos los datos del formulario
-    $text = htmlspecialchars($_POST['message']);
-    $date = date("Y-m-d");
-    $favourite = false;
+    $title = htmlspecialchars($_POST['title']);
+    $description = htmlspecialchars($_POST['description']);
+    $location = htmlspecialchars($_POST['location']);
+    $date = htmlspecialchars($_POST['date']);
     // Comprueba el texto ha sido introducido
-    if ($text == '') {
+    if ($title == '' || $description == '' || $location == '' || $date == '') {
         // Genera el mensaje de error
-        $error = 'Someone is hoping to read about you, write something :)';
+        $error = 'Make sure no one has any doubts so that your event is a complete success. Fill in the empty fields :3';
         // Si ningún campo esta en blanco, muestra el formulario otra vez
-        renderForm($text, $error);
+        renderForm($title, $description, $location, $date, $error);
     } else {
         // guardamos los datos en la base de datos
-        $sql = "INSERT MESSAGES SET TEXT = '$text', MESSAGE_DATE = '$date', FAVOURITE = '$favourite', USER_ID = 1" or die(mysqli_error());
+        $sql = "INSERT EVENTS SET NAME = '$title', EVENT_DATE = '$date', LOCATION = '$location', DESCRIPTION = '$description'"
+        or die(mysqli_error());
         mysqli_query($conn, $sql);
         /* Una vez que han sido guardados, redirigimos a la página de vista principal*/
-        header("Location: index.php");
+        header("Location: events.php");
     }
 } else { // Si el formulario no han sido enviado, muestra el formulario
-    renderForm('', '');
+    renderForm('', '', '', '', '');
 }
 ?>
