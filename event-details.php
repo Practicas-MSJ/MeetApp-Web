@@ -74,7 +74,7 @@ $result = $conn->query($sql);
             </div>
         <?php }
     } else {
-        echo "<div class='message', align='center'>There is no events. Create one!</div>";
+        echo "<div class='message', align='center'>404: That event doesn't exist.</div>";
     }
     $conn->close();
     ?>
