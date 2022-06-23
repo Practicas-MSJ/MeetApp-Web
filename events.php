@@ -51,7 +51,8 @@
 
         <div class="line"></div>         <!-- línea de separación de la cabecera -->
 
-        <div class="ContainerEvent">
+        <div>
+            <div class="ContainerEvent">
             <br><br><br><br>
             <?php if ($result->num_rows > 0) {
                 // output data of each row
@@ -59,7 +60,7 @@
 
                     <div class="message"> <!--cuerpo de mensaje-->
                         <h3><?php echo $row["NAME"]?></h3>
-                        <section class="line"></section>
+                        <section class="line"></section><br>
                         <?php echo $row["DESCRIPTION"]?>
                         <section class="editMessage">
                             <button class="editBtn">/</button><button class="editBtn">X</button>
@@ -72,6 +73,9 @@
             }
             $conn->close();
             ?>
+            </div>
+            <div class="background-event">
+            </div>
         </div>
         <div class="addBtn"><h3>+</h3></div> <!-- btn añadir mensaje-->
     </body>
