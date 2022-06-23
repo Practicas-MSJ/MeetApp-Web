@@ -16,7 +16,12 @@
 }
 /*************************************Divisor de la cabecera*************************************************/
 .header {
+    /*background-image: radial-gradient(circle at 90.56% -7.92%, #ff9c6f 0, #ff9277 6.25%, #ff887e 12.5%, #ff7c87 18.75%,*/
+    /*#ff708f 25%, #ff6398 31.25%, #ff55a2 37.5%, #ff48ab 43.75%, #f23cb5 50%, #df34bf 56.25%, #c833cb 62.5%, #ad38d6 68.75%,*/
+    /*#8c40e1 75%, #5e48ec 81.25%, #0051f4 87.5%, #0058fb 93.75%, #005eff 100%);*/
+
     background-image: url("/resources/img/fondo.jpg");
+    background-size: 100%;
     background-repeat: no-repeat;
     background-attachment: fixed;
     padding-top: 10px;
@@ -24,7 +29,7 @@
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 
     position: fixed;
-    z-index: 1;
+    z-index: 100;
     top: 0;
     left: 0;
     width: 100%;
@@ -60,7 +65,7 @@
     position: absolute;
     background-color: #f1f1f1;
     min-width: 160px;
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
     z-index: 1;
 }
 /* links */
@@ -98,26 +103,48 @@
     padding-right: 10px;
 }
 /****************************** Parte del body bajo la cabecera ************************************/
-.Container {
+.background-index {
+    /*background-image: radial-gradient(circle at 90.56% -7.92%, #ff9c6f 0, #ff9277 6.25%, #ff887e 12.5%, #ff7c87 18.75%,*/
+    /*#ff708f 25%, #ff6398 31.25%, #ff55a2 37.5%, #ff48ab 43.75%, #f23cb5 50%, #df34bf 56.25%, #c833cb 62.5%, #ad38d6 68.75%,*/
+    /*#8c40e1 75%, #5e48ec 81.25%, #0051f4 87.5%, #0058fb 93.75%, #005eff 100%);*/
+
     background-image: url("/resources/img/fondo.jpg");
+    background-size: cover;
     background-repeat: no-repeat;
-
-    opacity: 0.6;
-    height: 100%;
-    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
     z-index: -100;
-    position: absolute;
-}
-.ContainerEvent {
-    background-image: url("/resources/img/fondo-evento.jpg");
-    background-repeat: no-repeat;
-
     opacity: 0.7;
     height: 100%;
     width: 100%;
-    z-index: -100;
-    position: absolute;
 }
+
+.background-event {
+    /*background-image: radial-gradient(circle at 90.56% -7.92%, #ff9c6f 0, #ff9277 6.25%, #ff887e 12.5%, #ff7c87 18.75%,*/
+    /*#ff708f 25%, #ff6398 31.25%, #ff55a2 37.5%, #ff48ab 43.75%, #f23cb5 50%, #df34bf 56.25%, #c833cb 62.5%, #ad38d6 68.75%,*/
+    /*#8c40e1 75%, #5e48ec 81.25%, #0051f4 87.5%, #0058fb 93.75%, #005eff 100%);*/
+
+    background-image: url("/resources/img/fondo-evento.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -100;
+    opacity: 0.7;
+    height: 100%;
+    width: 100%;
+}
+
+.Container .ContainerEvent {
+
+    height: 100%;
+    width: 100%;
+    z-index: 50;
+    position: relative;
+}
+
 /****************************************** cuerpo mensaje **************************************************/
 .message {
     background-color: rgba(255, 255, 255, 0.65);
@@ -129,10 +156,13 @@
     font-family: 'Roboto', sans-serif;
     color: #111111;
     padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.07);
 }
 
 .message h3 {
     color: #111111;
+    padding-bottom: 7px;
 }
 
 .editMessage {

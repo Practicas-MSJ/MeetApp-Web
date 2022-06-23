@@ -51,32 +51,34 @@
         </div>
 
             <div class="line"></div>         <!-- línea de separación de la cabecera -->
+            <div>
+                <div class="Container">
+                    <br><br><br><br>
+                    <!-- Insertar cuerpo de la pag con php -->
 
-            <div class="Container">
-                <br><br><br><br>
-                <!-- Insertar cuerpo de la pag con php -->
+                    <?php if ($result->num_rows > 0) {
+                    // output data of each row
+                    while($row = $result->fetch_array()) { ?>
 
-                <?php if ($result->num_rows > 0) {
-                // output data of each row
-                while($row = $result->fetch_array()) { ?>
-
-                <div class="message"> <!--cuerpo de mensaje-->
-                    <h3><?php echo $row["NAME"]?></h3>
-                    <section class="line"></section>
-                    <?php echo $row["TEXT"]?>
-                    <section class="editMessage">
-                        <button class="editBtn">/</button>
-                        <a href="crud/delete_msj.php?id=<?php echo $row[0]?>"><button class="editBtn">X</button></a>
-                    </section>
+                    <div class="message"> <!--cuerpo de mensaje-->
+                        <h3><?php echo $row["NAME"]?></h3>
+                        <section class="line"></section><br>
+                        <?php echo $row["TEXT"]?>
+                        <section class="editMessage">
+                            <button class="editBtn">/</button>
+                            <a href="crud/delete_msj.php?id=<?php echo $row[0]?>"><button class="editBtn">X</button></a>
+                        </section>
+                    </div>
+                    <?php }
+                    } else {
+                        echo "<div class='message', align='center' '>There is no messages yet. Be the first one to write a meesage.</div>";
+                    }
+                    $conn->close();
+                    ?>
                 </div>
-                <?php }
-                } else {
-                    echo "<div class='message', align='center' '>There is no messages yet. Be the first one to write a meesage.</div>";
-                }
-                $conn->close();
-                ?>
+                <div class="background-index">
+                </div>
             </div>
-
         </div>
         <a href="new_message.php" <div class="addBtn"><h3>+</h3></div></a> <!-- btn añadir mensaje-->
     </body>

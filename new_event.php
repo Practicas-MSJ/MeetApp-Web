@@ -2,8 +2,8 @@
 /* Permite a los usuarios crear una nueva entrada en la base de datos */
 // Crea el nuevo formulario de nuevo registro
 function renderForm($text, $error) {
-?>
-<html>
+    ?>
+    <html>
     <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="css/form.css">
@@ -12,7 +12,7 @@ function renderForm($text, $error) {
         <!-- enlace googlefonts -->
         <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Chakra+Petch:wght@300&family=Permanent+Marker&family=Press+Start+2P&display=swap" rel="stylesheet">
         <script src="js/functions.js"></script>
-        <title>MeetApp - New message</title>
+        <title>MeetApp - New event</title>
     </head>
     <body class="form">
     <div class="container">
@@ -20,10 +20,12 @@ function renderForm($text, $error) {
             <div class="col-md-12">
                 <form action="" method="post">
                     <div class="text" align="center">
-                        <h1>New message</h1>
+                        <h1>New event</h1>
                         <fieldset>
-                            <label for="message">Say something new to your near people:</label>
-                            <textarea type="text" id="message" name="message" value="<?php echo $text; ?>"></textarea>
+                            <legend><span class="number">1</span> Your Basic Info</legend>
+
+                            <label for="name">Name:</label>
+                            <input type="text" id="name" name="user_name">
                         </fieldset>
                         <?php
                         // Si hay errores, los muestra en pantalla
@@ -38,12 +40,12 @@ function renderForm($text, $error) {
             </div>
         </div>
     </div>
-    <div class="background" id="new-message">
+    <div class="background" id="new-event">
     </div>
 
     </body>
-</html>
-<?php
+    </html>
+    <?php
 }
 // conectamos a la base de datos
 require_once("conexion/ddbb.php");
