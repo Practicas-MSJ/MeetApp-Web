@@ -23,7 +23,7 @@
         die("Connection failed: " . $conn->connect_error);
     }
 
-    $sql = "SELECT ID, EVENT_DATE, DESCRIPTION, LOCATION, NAME FROM EVENTS";
+    $sql = "SELECT ID, DESCRIPTION, NAME FROM EVENTS";
     $result = $conn->query($sql);
     ?>
 
@@ -64,6 +64,7 @@
                         <section class="editMessage">
                             <button class="editBtn">/</button><button class="editBtn">X</button>
                         </section>
+                        <a href="event-details.php?id=<?php echo $row[0]?>" <h5 class="details">Details</h5></a>
                     </div>
                 <?php }
             } else {

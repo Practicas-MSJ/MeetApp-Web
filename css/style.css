@@ -72,6 +72,10 @@
     text-decoration: none;
 }
 
+.details { /* Color  */
+    color: blueviolet;
+}
+
 .show {
     display:block;
 }
@@ -139,6 +143,10 @@
     color: #111111;
     border: none;
     cursor: pointer;
+}
+
+.description{
+    color: #111111;
 }
 /*********************************************** botón nuevo mensaje flotante ******************************/
 .addBtn {
