@@ -23,7 +23,7 @@
             }
 
         $sql = "SELECT MESSAGES.ID, MESSAGE_DATE, FAVOURITE, IMAGE, TEXT, CATEGORY_ID, USER_ID, USERS.NAME FROM MESSAGES
-                INNER JOIN USERS ON MESSAGES.USER_ID = USERS.ID";
+                INNER JOIN USERS ON MESSAGES.USER_ID = USERS.ID ORDER BY ID DESC";
         $result = $conn->query($sql);
     ?>
 
