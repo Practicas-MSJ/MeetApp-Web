@@ -9,9 +9,9 @@
     <!-- enlace googlefonts -->
     <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Chakra+Petch:wght@300&family=Permanent+Marker&family=Press+Start+2P&display=swap" rel="stylesheet">
     <!--enlace para iconos-->
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css'>
 
-
-    <title>MeetApp - Evento</title>
+    <title>MeetApp - Event</title>
 </head>
 
 <?php
@@ -32,7 +32,7 @@ $result = $conn->query($sql);
 <body>
 <div class="header">
     <section class="dropdown">
-        <button onclick="navFunction()" class="dropbtn">Menu</button>
+        <button onclick="navFunction()" class="dropbtn"><h1><i class="fi fi-rr-align-justify"></i></h1></button>
         <div id="myDropdown" class="dropdown-content">
             <a href="events.php">Events</a>
             <div class="line"></div>
@@ -49,7 +49,7 @@ $result = $conn->query($sql);
     </section>
 
     <section class="logForm">
-        <h1>X</h1>
+        <h1><i class="fi fi-rr-user"></i></h1>
     </section>
 </div>
 
@@ -69,7 +69,7 @@ $result = $conn->query($sql);
                     <p class="description"><strong style="color: #111111">Location:</strong> <?php echo $row["LOCATION"]?></p><br>
                     <p class="description"><strong style="color: #111111">Date:</strong> <?php echo $row["EVENT_DATE"]?></p>
                     <section class="editMessage">
-                        <button class="editBtn">/</button><button class="editBtn">X</button>
+                        <button class="editBtn"><i class="fi fi-rr-pencil"></i></button><button class="editBtn"><i class="fi fi-rr-trash"></i></button>
                     </section>
                     <a href="events.php" <h5 class="details">Back</h5></a>
                 </div>
@@ -82,6 +82,6 @@ $result = $conn->query($sql);
     </div>
     <div class="background-event"></div>
 </div>
-<div class="addBtn"><h3>+</h3></div> <!-- btn añadir mensaje-->
+<div class="addBtn"><h3><i class="fi fi-rr-paper-plane"></i></h3></div> <!-- btn añadir mensaje-->
 </body>
 </html>

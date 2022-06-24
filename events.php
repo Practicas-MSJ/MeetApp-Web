@@ -9,9 +9,9 @@
         <!-- enlace googlefonts -->
         <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Chakra+Petch:wght@300&family=Permanent+Marker&family=Press+Start+2P&display=swap" rel="stylesheet">
         <!--enlace para iconos-->
+        <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css'>
 
-
-        <title>MeetApp - Eventos</title>
+        <title>MeetApp - Events</title>
     </head>
 
     <?php
@@ -30,7 +30,7 @@
     <body>
         <div class="header">
             <section class="dropdown">
-                <button onclick="navFunction()" class="dropbtn">Menu</button>
+                <button onclick="navFunction()" class="dropbtn"><h1><i class="fi fi-rr-align-justify"></i></h1></button>
                 <div id="myDropdown" class="dropdown-content">
                     <a href="index.php">Messages</a>
                     <div class="line"></div>
@@ -45,7 +45,7 @@
             </section>
 
             <section class="logForm">
-                <h1>X</h1>
+                <h1><i class="fi fi-rr-user"></i></h1>
             </section>
         </div>
 
@@ -63,8 +63,8 @@
 <!--                        <section class="line"></section><br>-->
 <!--                        --><?php //echo $row["DESCRIPTION"]?>
                         <section class="editMessage">
-                            <button class="editBtn">/</button>
-                            <a href="crud/delete_event.php?id=<?php echo $row[0]?>"><button class="editBtn">X</button></a>
+                            <button class="editBtn"><i class="fi fi-rr-pencil"></i></button>
+                            <a href="crud/delete_event.php?id=<?php echo $row[0]?>"><button class="editBtn"><i class="fi fi-rr-trash"></i></button></a>
                         </section>
                         <a href="event_details.php?id=<?php echo $row[0]?>" <h5 class="details">Details</h5></a>
                     </div>
@@ -78,6 +78,6 @@
             <div class="background-event">
             </div>
         </div>
-        <a href="new_event.php" <div class="addBtn"><h3>+</h3></div></a> <!-- btn añadir mensaje-->
+        <a href="new_event.php" <div class="addBtn"><h3><i class="fi fi-rr-paper-plane"></i></h3></div></a> <!-- btn añadir mensaje-->
     </body>
 </html>
