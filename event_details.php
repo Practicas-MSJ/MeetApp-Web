@@ -69,7 +69,8 @@ $result = $conn->query($sql);
                     <p class="description"><strong style="color: #111111">Location:</strong> <?php echo $row["LOCATION"]?></p><br>
                     <p class="description"><strong style="color: #111111">Date:</strong> <?php echo $row["EVENT_DATE"]?></p>
                     <section class="editMessage">
-                        <button class="editBtn"><i class="fi fi-rr-pencil"></i></button><button class="editBtn"><i class="fi fi-rr-trash"></i></button>
+                        <button class="editBtn"><i class="fi fi-rr-pencil"></i></button>
+                        <a href="crud/delete_event.php?id=<?php echo $row[0]?>"><button class="editBtn"><i class="fi fi-rr-trash"></i></button></a>
                     </section>
                     <a href="events.php" <h5 class="details">Back</h5></a>
                 </div>
