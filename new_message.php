@@ -7,7 +7,7 @@ $conn = new mysqli(HOST, USER, PASS, DBNAME);
 // Crea el nuevo formulario de nuevo registro
 function renderForm($text, $user, $error) {
     $conn = new mysqli(HOST, USER, PASS, DBNAME);
-    $sql = "SELECT ID, NAME, EMAIL FROM USERS";
+    $sql = "SELECT ID, NAME, EMAIL FROM USERS ORDER BY NAME ASC";
     $result = $conn->query($sql);
 ?>
 <html>

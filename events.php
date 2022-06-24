@@ -60,8 +60,8 @@
 
                     <div class="message"> <!--cuerpo de mensaje-->
                         <h3><?php echo $row["NAME"]?></h3>
-                        <section class="line"></section><br>
-                        <?php echo $row["DESCRIPTION"]?>
+<!--                        <section class="line"></section><br>-->
+<!--                        --><?php //echo $row["DESCRIPTION"]?>
                         <section class="editMessage">
                             <button class="editBtn">/</button>
                             <a href="crud/delete_event.php?id=<?php echo $row[0]?>"><button class="editBtn">X</button></a>

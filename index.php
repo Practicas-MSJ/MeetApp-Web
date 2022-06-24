@@ -71,7 +71,7 @@
                     </div>
                     <?php }
                     } else {
-                        echo "<div class='message', align='center' '>There is no messages yet. Be the first one to write a meesage.</div>";
+                        echo "<div class='message', align='center' '>There is no messages yet. Be the first one to write a message.</div>";
                     }
                     $conn->close();
                     ?>

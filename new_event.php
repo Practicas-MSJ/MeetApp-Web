@@ -24,10 +24,10 @@ function renderForm($title, $description, $location, $date, $error) {
                         <fieldset>
                             <legend><span class="number">1</span> What are you planning?</legend>
 
-                            <label for="title">Name:</label>
+                            <label for="title">Title:</label>
                             <input type="text" id="title" name="title" value="<?php echo $title; ?>">
 
-                            <label for="description">Say something new to your near people:</label>
+                            <label for="description">Describe your event:</label>
                             <textarea type="text" id="description" name="description" value="<?php echo $description; ?>"></textarea>
                         </fieldset>
                         <fieldset>

@@ -65,9 +65,9 @@ $result = $conn->query($sql);
                     <h3><?php echo $row["NAME"]?></h3>
                     <section class="line"></section>
                     <br>
-                    <p class="description">Description: <?php echo $row["DESCRIPTION"]?></p><br>
-                    <p class="description">Location: <?php echo $row["LOCATION"]?></p><br>
-                    <p class="description">Date: <?php echo $row["EVENT_DATE"]?></p>
+                    <p class="description"><strong style="color: #111111">Description:</strong> <?php echo $row["DESCRIPTION"]?></p><br>
+                    <p class="description"><strong style="color: #111111">Location:</strong> <?php echo $row["LOCATION"]?></p><br>
+                    <p class="description"><strong style="color: #111111">Date:</strong> <?php echo $row["EVENT_DATE"]?></p>
                     <section class="editMessage">
                         <button class="editBtn">/</button><button class="editBtn">X</button>
                     </section>
