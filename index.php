@@ -31,7 +31,7 @@
         <div class="indexPage">
         <div class="header">
             <section class="dropdown">
-                     <button onclick="navFunction()" class="dropbtn"><h1><i class="fi fi-rr-align-justify"></i></h1></button>
+                     <button onclick="navFunction()" class="dropbtn" style="font-size: 16pt">☰</button>
                      <div id="myDropdown" class="dropdown-content">
                          <a href="events.php">Events</a>
                          <div class="line"></div>
