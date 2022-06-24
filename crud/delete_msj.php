@@ -17,3 +17,5 @@ if (isset($_GET['id']) && is_numeric($_GET['id'])) {
     /* Si el ID no está configurado, o no es válido, volvemos a la página principal*/
     header("Location: ../index.php");
 }
+$conn->close();
+?>

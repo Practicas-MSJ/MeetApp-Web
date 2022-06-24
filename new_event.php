@@ -90,4 +90,5 @@ if (isset($_POST['submit'])) {
 } else { // Si el formulario no han sido enviado, muestra el formulario
     renderForm('', '', '', '', '');
 }
+$conn->close();
 ?>

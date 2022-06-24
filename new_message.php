@@ -1,7 +1,14 @@
 <?php
+// conectamos a la base de datos
+require_once("conexion/ddbb.php");
+$conn = new mysqli(HOST, USER, PASS, DBNAME);
+
 /* Permite a los usuarios crear una nueva entrada en la base de datos */
 // Crea el nuevo formulario de nuevo registro
-function renderForm($text, $error) {
+function renderForm($text, $user, $error) {
+    $conn = new mysqli(HOST, USER, PASS, DBNAME);
+    $sql = "SELECT ID, NAME, EMAIL FROM USERS";
+    $result = $conn->query($sql);
 ?>
 <html>
     <head>
@@ -25,6 +32,14 @@ function renderForm($text, $error) {
                             <label for="message">Say something new to your near people:</label>
                             <textarea type="text" id="message" name="message" value="<?php echo $text; ?>"></textarea>
                         </fieldset>
+                        <fieldset>
+                            <label for="message">Select your user:</label>
+                            <select id="user" name="user" value="<?php echo $user; ?>">
+                                <?php foreach ($result as $r){  ?>
+                                    <option value="<?php echo $r['ID'];?>"><?php echo $r['NAME']; ?></option>
+                                <?php } ?>
+                            </select>
+                        </fieldset>
                         <?php
                         // Si hay errores, los muestra en pantalla
                         if ($error != '') {
@@ -45,9 +60,6 @@ function renderForm($text, $error) {
 </html>
 <?php
 }
-// conectamos a la base de datos
-require_once("conexion/ddbb.php");
-$conn = new mysqli(HOST, USER, PASS, DBNAME);
 // Comprueba si el formulario ha sido enviado.
 // Si se ha enviado, comienza el proceso el formulario y guarda los datos en la DB
 if (isset($_POST['submit'])) {
@@ -55,6 +67,7 @@ if (isset($_POST['submit'])) {
     $text = htmlspecialchars($_POST['message']);
     $date = date("Y-m-d");
     $favourite = false;
+    $user = htmlspecialchars($_POST['user']);
     // Comprueba el texto ha sido introducido
     if ($text == '') {
         // Genera el mensaje de error
@@ -63,12 +76,13 @@ if (isset($_POST['submit'])) {
         renderForm($text, $error);
     } else {
         // guardamos los datos en la base de datos
-        $sql = "INSERT MESSAGES SET TEXT = '$text', MESSAGE_DATE = '$date', FAVOURITE = '$favourite', USER_ID = 1" or die(mysqli_error());
+        $sql = "INSERT MESSAGES SET TEXT = '$text', MESSAGE_DATE = '$date', FAVOURITE = '$favourite', USER_ID = '$user'" or die(mysqli_error());
         mysqli_query($conn, $sql);
         /* Una vez que han sido guardados, redirigimos a la página de vista principal*/
         header("Location: index.php");
     }
 } else { // Si el formulario no han sido enviado, muestra el formulario
-    renderForm('', '');
+    renderForm('', '', '');
 }
+$conn->close();
 ?>
